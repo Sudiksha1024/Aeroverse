@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NCC Air Wing Cadet</title>
+    <link rel="stylesheet" href="cadet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="cadet-header">
+    <h1>✈ NCC Air Wing Cadet Portal</h1>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<!-- ================= SIDE MENU ================= -->
+<nav class="cadet-menu">
+    <button onclick="showModule('landing')">Home</button>
+    <button onclick="showModule('syllabus')">Syllabus</button>
+    <button onclick="showModule('questions')">Practice Qn</button>
+</nav>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="cadet-container">
+
+    <!-- Landing Page -->
+    <section id="landing" class="module-section">
+        <h2>Welcome, Cadet!</h2>
+        <p>This is your NCC Air Wing portal. Access syllabus, practice questions, and stay ready for your training missions!</p>
+        <button class="hero-btn" onclick="showModule('syllabus')">Go to Syllabus</button>
+    </section>
+
+    <!-- Syllabus Module -->
+    <section id="syllabus" class="module-section" style="display:none;">
+        <h2>NCC Air Wing Syllabus</h2>
+        <ul class="syllabus-list">
+            <li><button onclick="openLesson('principles')">✈ Principles of Flight</button></li>
+            <li><button onclick="openLesson('aircraft')">✈ Aircraft Parts and Controls</button></li>
+            <li><button onclick="openLesson('navigation')">✈ Air Navigation Basics</button></li>
+            <li><button onclick="openLesson('meteorology')">✈ Aviation Meteorology</button></li>
+            <li><button onclick="openLesson('regulations')">✈ Air Regulations</button></li>
+            <li><button onclick="openLesson('map')">✈ Map Reading</button></li>
+        </ul>
+    </section>
+
+    <!-- Question Bank Module -->
+    <section id="questions" class="module-section" style="display:none;">
+        <h2>Practice Questions</h2>
+
+        <div class="question">
+            <p><strong>Q1:</strong> What are the four forces acting on an aircraft?</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>Lift, Weight, Thrust, and Drag.</p>
+            </details>
+        </div>
+
+        <div class="question">
+            <p><strong>Q2:</strong> What is the function of the rudder?</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>The rudder controls the yaw (left-right movement) of the aircraft.</p>
+            </details>
+        </div>
+
+        <div class="question">
+            <p><strong>Q3:</strong> Define lift.</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>Lift is the upward force that opposes the weight of an aircraft and keeps it in the air.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- ================= LESSON PAGES ================= -->
+    <section id="principles" class="module-section" style="display:none;">
+        <button class="back-btn" onclick="showModule('syllabus')">← Back to Syllabus</button>
+        <h2>✈ Principles of Flight</h2>
+        <p>Lift, drag, thrust, weight, Bernoulli’s principle, angles of attack, stability, and basic aerodynamics explained.</p>
+    </section>
+
+    <section id="aircraft" class="module-section" style="display:none;">
+        <button class="back-btn" onclick="showModule('syllabus')">← Back to Syllabus</button>
+        <h2>✈ Aircraft Parts and Controls</h2>
+        <p>Cockpit instruments, control surfaces, fuselage, wings, landing gear, and how pilots manage the aircraft.</p>
+    </section>
+
+    <section id="navigation" class="module-section" style="display:none;">
+        <button class="back-btn" onclick="showModule('syllabus')">← Back to Syllabus</button>
+        <h2>✈ Air Navigation Basics</h2>
+        <p>Maps, compass, GPS, flight route planning, headings, and waypoints.</p>
+    </section>
+
+    <section id="meteorology" class="module-section" style="display:none;">
+        <button class="back-btn" onclick="showModule('syllabus')">← Back to Syllabus</button>
+        <h2>✈ Aviation Meteorology</h2>
+        <p>Weather patterns, clouds, winds, turbulence, and safe flying conditions.</p>
+    </section>
+
+    <section id="regulations" class="module-section" style="display:none;">
+        <button class="back-btn" onclick="showModule('syllabus')">← Back to Syllabus</button>
+        <h2>✈ Air Regulations</h2>
+        <p>Airspace rules, regulations, cadet compliance, and safety laws.</p>
+    </section>
+
+    <section id="map" class="module-section" style="display:none;">
+        <button class="back-btn" onclick="showModule('syllabus')">← Back to Syllabus</button>
+        <h2>✈ Map Reading</h2>
+        <p>Techniques to read aeronautical maps, coordinates, scale, and plotting flight paths.</p>
+    </section>
+
+</main>
+
+<script>
+function logout() {
+    alert("Logged out!");
+    // Redirect or clear session logic here
+}
+
+function showModule(moduleId) {
+    const modules = ['landing','syllabus','questions','principles','aircraft','navigation','meteorology','regulations','map'];
+    modules.forEach(id => {
+        document.getElementById(id).style.display = (id === moduleId) ? 'block' : 'none';
+    });
+}
+
+function openLesson(lessonId){
+    showModule(lessonId);
+}
+</script>
+</body>
+</html>

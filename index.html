@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AeroVerse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Premium Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="glass-header">
+    <h1 class="logo">✈ AeroVerse</h1>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- ================= SIDE MENU ================= -->
+<nav id="menu" class="side-menu">
+    <a onclick="navigate('mission')">Mission</a>
+    <a onclick="navigate('aero')">Aerodynamics</a>
+    <a onclick="navigate('aircraft')"> Parts of Aircraft</a>
+    <a onclick="navigate('flight')"> Flight Instruments </a>
+    <a onclick="navigate('resources')"> Flight circuit </a>
+     <a onclick="navigate('login')"> LOGIN </a>
+</nav>
+
+
+<!-- ================= DYNAMIC CONTENT ================= -->
+    
+<main id="content"></main>
+
+<script src="script.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
