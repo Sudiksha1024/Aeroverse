@@ -80,6 +80,7 @@ h3 {
     cursor: pointer;
     background-color: #f0f0f0;
     box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+     border: 1px solid rgba(91,192,190,0.15);
 }
 
 
